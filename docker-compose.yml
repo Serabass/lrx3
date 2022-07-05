@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  jest:
+    image: node:18-alpine
+
+    working_dir: /app
+
+    tty: true
+    stdin_open: true
+
+    volumes:
+      - .:/app
+    #  - /app/node_modules
+
+    environment:
+      - NODE_ENV=test
+    #  - CHOKIDAR_USEPOLLING=true
+
+    command: ["/bin/sh", "/app/start.sh"]
