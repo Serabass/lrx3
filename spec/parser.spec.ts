@@ -135,4 +135,11 @@ describe('sum', () => {
     parse(`666`, 'Integer');
     parse(`777`, 'Integer');
   });
+
+  it('Match LRXBlock', () => {
+    parse(`[1 Verse]
+    Am    Dm
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+`, 'LRXBlock');
+  });
 });
