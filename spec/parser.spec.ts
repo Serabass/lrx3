@@ -124,4 +124,15 @@ describe('sum', () => {
     parse(`\n`, 'NL');
     parse(`\r\n`, 'NL');
   });
+
+  it('Match SingleLineComment', () => {
+    parse(`// 1231231`, 'SingleLineComment');
+  });
+
+  it('Match Integer', () => {
+    parse(`1231231`, 'Integer');
+    parse(`123`, 'Integer');
+    parse(`666`, 'Integer');
+    parse(`777`, 'Integer');
+  });
 });
