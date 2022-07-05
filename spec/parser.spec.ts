@@ -1,7 +1,7 @@
-import sum from '../src';
+import parser from '../src/parser';
 
 describe('sum', () => {
   it('sums two numbers', () => {
-    expect(sum(1, 2)).toEqual(3);
+    parser.parse('===\n\n');
   });
 });
