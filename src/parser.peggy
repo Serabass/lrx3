@@ -339,6 +339,9 @@ WhiteSpace "whitespace"
   / "\u00A0"
   / "\uFEFF"
 
+WhiteSpaces "whitespaces"
+  = WhiteSpace+
+
 NL "end of line"
   = "\n"
   / "\r\n"
