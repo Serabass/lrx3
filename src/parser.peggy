@@ -195,7 +195,7 @@ Timecode 'timecode'
 }
 
 Time
- = mm: Integer ':' ss: Integer '.' ms:Integer {
+ = mm: Integer ':' ss: Integer ms:TimeMilliseconds? {
   return {
     type: 'TIME',
     mm,
@@ -206,8 +206,10 @@ Time
   };
  }
 
-
-
+TimeMilliseconds
+  = '.' ms: Integer {
+    return ms;
+  }
 
 ChordsLine 'chord line'
 = head: Chord tail: Chord* _ NL {
@@ -244,19 +246,19 @@ ChordBass 'chord bass'
   };
  }
 
-Note = 
- 'C#' /
- 'C' /
- 'D#' /
- 'D' /
- 'E' /
- 'F#' /
- 'F' /
- 'G#' /
- 'G' /
- 'A#' /
- 'A' /
- 'B'
+Note
+ = 'C#'
+ / 'C'
+ / 'D#'
+ / 'D'
+ / 'E'
+ / 'F#'
+ / 'F'
+ / 'G#'
+ / 'G'
+ / 'A#'
+ / 'A'
+ / 'B'
 
 ChordSuffix
  = 'M'
@@ -325,7 +327,7 @@ SourceCharacter 'source character'
 EOF 'end of file'
   = !.
 
-__
+__ 'any whitespace'
   = (WhiteSpace / NL / Comment)*
 
 _
