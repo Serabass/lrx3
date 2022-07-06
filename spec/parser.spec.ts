@@ -198,10 +198,13 @@ describe('sum', () => {
     parse(`A`, 'Note');
     parse(`B`, 'Note');
     parse(`C`, 'Note');
+    parse(`C#`, 'Note');
     parse(`D`, 'Note');
+    parse(`D#`, 'Note');
     parse(`E`, 'Note');
     parse(`F`, 'Note');
     parse(`G`, 'Note');
+    parse(`G#`, 'Note');
   });
 
   it('Match EOF', () => {
