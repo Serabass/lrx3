@@ -190,14 +190,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       // TODO Доработать сам парсер
     }
   });
- 
+
   describe("Report", () => {
     it("Match Line Report", () => {
       let src = `===
-  
+
 ~1 Content
-  
-  `;
+
+`;
       let res = parse(src, "LRXReport");
       expect(res.type).toBe("REPORT");
       expect(res.lines.length).toBe(1);
